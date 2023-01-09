@@ -9,6 +9,10 @@ const connect = require('./db/connect')
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.status(200).send({ message: "App started successfully!" })
+  })
+
 app.use('/items', require('./routes/items'));
 
 const start =async () => {
